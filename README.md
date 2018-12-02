@@ -129,36 +129,40 @@ while True:
 
 #### Reward function
 It is also best practices to visualize the reward function in terms of its inputs. Here's one example based on the default reward function provided in the source code:
+```
+import numpy as np
+import pandas as pd
+import seaborn as sns
+%matplotlib inline
 
-    import numpy as np
-    import pandas as pd
-    import seaborn as sns
-    %matplotlib inline
-    
-    
-    def map_function(reward_function, x, y, target_pos):
-        R = pd.DataFrame(np.zeros([len(x), len(y)]), index=y, columns=x)
-        for xx in x:
-            for yy in y:
-                R[xx][yy] = reward_function([xx, yy], target_pos)
-    
-        return R
-    
-    
-    reward_function = lambda pose, target_pos: 1.-.3*(abs(pose - target_pos)).sum()
-    
-    x_range = np.round(np.arange(0.0,10,0.1), 2)
-    z_range = np.round(np.arange(10,0,-0.1), 2)
-    
-    target_pos = np.array([0, 10])
-    
-    R = map_function(reward_function, x_range, z_range, target_pos)
-    
-    ax = sns.heatmap(R)
-    ax.set_xlabel("Position X-axis")
-    ax.set_ylabel("Position Z-axis")
-    plt.show()
-    
+
+def map_function(reward_function, x, y, target_pos):
+    R = pd.DataFrame(np.zeros([len(x), len(y)]), index=y, columns=x)
+    for xx in x:
+        for yy in y:
+            R[xx][yy] = reward_function([xx, yy], target_pos)
+
+    return R
+
+
+reward_function = lambda pose, target_pos: 1.-.3*(abs(pose - target_pos)).sum()
+
+x_range = np.round(np.arange(-10.0,10,0.1), 2)
+z_range = np.round(np.arange(20,0,-0.1), 2)
+
+target_pos = np.array([0, 10])
+
+R = map_function(reward_function, x_range, z_range, target_pos)
+
+ax = sns.heatmap(R)
+ax.set_xlabel("Position X-axis")
+ax.set_ylabel("Position Z-axis")
+plt.show()
+```
+
+![](https://udacity-reviews-uploads.s3.us-west-2.amazonaws.com/_attachments/38140/1543196738/download.png)
+
+
 
 This way it is easier to play with alternative possibilities. For example, instead of a linear distance we can use an Euclidean distance:
 
