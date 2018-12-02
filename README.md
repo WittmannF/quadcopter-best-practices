@@ -3,11 +3,11 @@
 
 
 ### Useful links 
-https://knowledge.udacity.com/questions/3128
-https://discussions.udacity.com/t/anyone-got-quadcopter-v2-to-fly/655471
-https://www.youtube.com/watch?v=0R3PnJEisqk
-https://pemami4911.github.io/blog/2016/08/21/ddpg-rl.html
-https://arxiv.org/pdf/1509.02971.pdf
+- https://knowledge.udacity.com/questions/3128
+- https://discussions.udacity.com/t/anyone-got-quadcopter-v2-to-fly/655471
+- https://www.youtube.com/watch?v=0R3PnJEisqk
+- https://pemami4911.github.io/blog/2016/08/21/ddpg-rl.html
+- https://arxiv.org/pdf/1509.02971.pdf
 
 ### How to get started
 Since the DDPG algorithm is already provided, your main goal is to define the reward function to make the agent learn your choice of task. Ideally this reward function should be continuous and differentiable. 
