@@ -10,25 +10,22 @@
 - https://arxiv.org/pdf/1509.02971.pdf
 
 ### How to get started
-Since the DDPG algorithm is already provided, your main goal is to define the reward function to make the agent learn your choice of task. Ideally this reward function should be continuous and differentiable. 
-.... (to be expanded)
+Since the DDPG algorithm is already provided, your main goal is to define the reward function to make the agent learn your choice of task. Ideally this reward function should be continuous and differentiable.
 
 ### Main Tips
-- Ideally the reward function should be normalized between -1 and 1 (exept for colisions) in order to the NN better learn the gradients. The method np.clip can be used for this purpose.
+- Ideally the reward function should be normalized between -1 and 1 (exept for colisions) in order to the NN better learn the gradients. The method `np.clip` can be used for this purpose.
 Check the learning rate parameter in `Adam(lr=...)`. Lower learning rates might lead to better learning results.
 - In order to debug the agent, after training it is highly advisable to visualize it. Check the Visualization section. 
 - Also try to visualize the reward function as a heatmap in order to better debug it. Check the visualization section as well. 
 - Keep in mind that the z = 0 is considered the floor. 
 - Don’t initialize the agent on z=0 since it can be too unstable to fly and easily crash.
-- When flying, it is important to avoid crashes by penalizing colisions to the floor. Here’s an example on how this can be done:
+- When flying, it is important to avoid crashes by penalizing colisions to the floor. The penalization has to be very high in order to compensate the accumulated positive reward. You don’t need to keep it between -1 and 1. Here’s an example on how this can be done:
 
 ```
 # Check if done is true before the runtime finished
 if self.sim.done and self.sim.runtime > self.sim.time:
     reward = -... # 
 ```
-
-- This negative reward has to be very high in order to compensate the accumulated positive reward. You don’t need to keep it between -1 and 1. 
 
 - You can choose one of 4 tasks: takeoff, hovering, landing and (forgot the last one). Usually the easiest task to get started is the takeoff. 
     - For the takeoff task, put the z-axis in a very high distance, like z=300. 
@@ -40,18 +37,16 @@ if self.sim.done and self.sim.runtime > self.sim.time:
 ### Visualizations
 #### Agent (Quadcopter)
 In order to better debug how your agent is performing after training, you should visualize it. The plot can be as simple as a x, y, z versus time. Here’s an example:
-
+```
 import matplotlib.pyplot as plt
 %matplotlib inline
-
-
 							
 plt.plot(results['time'], results['x'], label='x')
 plt.plot(results['time'], results['y'], label='y')
 plt.plot(results['time'], results['z'], label='z')
 plt.legend()
 
-
+```
 
 You can also plot the z-axis (altitude) vs x-axis or even in 3D. Here's an example of static 3D plot:
 
@@ -68,8 +63,6 @@ You can also plot the z-axis (altitude) vs x-axis or even in 3D. Here's an examp
     ax.scatter(results['x'], results['y'], results['z'])
   
 ![](https://i.imgur.com/2Jeeq3d.gif)
-
-
 
 
 In addition, an animated plot can be performed using the following class:
@@ -132,7 +125,6 @@ while True:
 ```
 
 ![](https://i.imgur.com/V5IATLa.gif)
-
 
 
 
