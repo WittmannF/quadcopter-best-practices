@@ -15,7 +15,7 @@ Since the DDPG algorithm is already provided, your main goal is to define the re
 
 ### Main Tips
 - Ideally the reward function should be normalized between -1 and 1 (exept for colisions) in order to the NN better learn the gradients. The method np.clip can be used for this purpose.
-Check the learning rate parameter in Adam(lr=...). Lower learning rates might lead to better learning results.
+Check the learning rate parameter in `Adam(lr=...)`. Lower learning rates might lead to better learning results.
 - In order to debug the agent, after training it is highly advisable to visualize it. Check the Visualization section. 
 - Also try to visualize the reward function as a heatmap in order to better debug it. Check the visualization section as well. 
 - Keep in mind that the z = 0 is considered the floor. 
