@@ -20,7 +20,6 @@ Check the learning rate parameter in `Adam(lr=...)`. Lower learning rates might 
 - Keep in mind that the z = 0 is considered the floor. 
 - Don’t initialize the agent on z=0 since it can be too unstable to fly and easily crash.
 - When flying, it is important to avoid crashes by penalizing colisions to the floor. The penalization has to be very high in order to compensate the accumulated positive reward. You don’t need to keep it between -1 and 1. Here’s an example on how this can be done:
-
 ```
 # Check if done is true before the runtime finished
 if self.sim.done and self.sim.runtime > self.sim.time:
@@ -32,7 +31,7 @@ if self.sim.done and self.sim.runtime > self.sim.time:
     - For the hovering task keep in mind that 1/rpm can make a huge difference between the agent going up or down. Try lowering the minimum and maximum speed range. 
     - For the landing taks, try to include the speed in the reward function. Ideally you should reward very low speed when the agent is close to the origin. 
     - If you want the agent to fly from point A to point B, it is important to make the agent aknowledge when it reached the destination and finalize the episode when this happens. 
-    - It might be too unstable for the agent to learn to control the exact position of x, y and z with only 1000 iterations. You can try focus on the z axis first (by adjusting the reward function on this)
+- It might be too unstable for the agent to learn to control the exact position of x, y and z with only 1000 iterations. You can try focus on the z axis first (by adjusting the reward function on this)
 
 ### Visualizations
 #### Agent (Quadcopter)
