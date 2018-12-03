@@ -180,7 +180,6 @@ This way it is easier to play with alternative possibilities. For example, inste
     ax.set_ylabel("Position Z-axis")
     plt.show()
     
-
-
+![](https://udacity-reviews-uploads.s3.us-west-2.amazonaws.com/_attachments/38140/1543196899/download__25_.png)
 
 
