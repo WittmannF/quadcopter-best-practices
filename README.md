@@ -30,7 +30,7 @@ if self.sim.done and self.sim.runtime > self.sim.time:
     - For the takeoff task, put the z-axis in a very high distance, like z=300. 
     - For the hovering task keep in mind that 1/rpm can make a huge difference between the agent going up or down. Try lowering the minimum and maximum speed range. 
     - For the landing taks, try to include the speed in the reward function. Ideally you should reward very low speed when the agent is close to the origin. 
-    - If you want the agent to fly from point A to point B, it is important to make the agent aknowledge when it reached the destination and finalize the episode when this happens. 
+    - If you want the agent to fly from point A to point B, it is important to make the agent aknowledge when it reached the destination and finalize the episode when this happens. Please check the first answer of [this reference](https://knowledge.udacity.com/questions/3128) for more details. 
 - It might be too unstable for the agent to learn to control the exact position of x, y and z with only 1000 iterations. You can try focus on the z axis first (by adjusting the reward function on this)
 
 ### Visualizations
