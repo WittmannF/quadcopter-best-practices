@@ -1,5 +1,5 @@
 
-## (Unofficial) How to Train a Quadcopter Best Practices
+## (Unofficial) Udacity's How to Train a Quadcopter Best Practices
 
 
 ### Useful links 
