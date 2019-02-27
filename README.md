@@ -4,8 +4,9 @@
 
 ### Useful links 
 - https://knowledge.udacity.com/questions/3128
-    - [Mirror link](https://github.com/WittmannF/quadcopter-best-practices/blob/master/knowledge_udacity_question_3128.pdf)
+    - [Mirror](https://github.com/WittmannF/quadcopter-best-practices/blob/master/knowledge_udacity_question_3128.pdf)
 - https://discussions.udacity.com/t/anyone-got-quadcopter-v2-to-fly/655471
+    - [Mirror](https://github.com/WittmannF/quadcopter-best-practices/blob/master/Anyone%20got%20Quadcopter%20v2%20to%20fly_%20-%20Project_%20Teach%20a%20Quadcopter%20How%20to%20Fly%20-%20Udacity.pdf)
 - https://www.youtube.com/watch?v=0R3PnJEisqk
 - https://pemami4911.github.io/blog/2016/08/21/ddpg-rl.html
 - https://arxiv.org/pdf/1509.02971.pdf
