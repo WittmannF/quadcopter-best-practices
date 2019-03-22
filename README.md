@@ -12,7 +12,7 @@
 - https://arxiv.org/pdf/1509.02971.pdf
 
 ### How to get started
-Since the DDPG algorithm is already provided, your main goal is to define the reward function to make the agent learn your choice of task. Ideally this reward function should be continuous and differentiable.
+Since the DDPG algorithm is already provided, your main goal is to define the reward function to make the agent learn your choice of task.
 
 ### Main Tips
 - Ideally the reward function should be normalized between -1 and 1 (except for colisions) in order to the NN better learn the gradients. The hyperbolic tangent function `np.tanh` can be used for this purpose.
