@@ -27,7 +27,7 @@ Since the DDPG algorithm is already provided, your main goal is to define the re
 if self.sim.done and self.sim.runtime > self.sim.time:
     reward = -... # 
 ```
-
+- It was reported that increasing the hyperparameter tau might help in the convergence.
 - You can choose one of 4 tasks: takeoff, hover in place, land softly, or reach a target pose. Usually the easiest task to get started is the takeoff. 
     - For the takeoff task, set the reward to an average distance (like z=50), and give a generous reward once its position is higher than the target
     - For the hovering task keep in mind that 1/rpm can make a huge difference between the agent going up or down. Try lowering the minimum and maximum speed range. 
