@@ -12,7 +12,9 @@
 - https://arxiv.org/pdf/1509.02971.pdf
 
 ### How to get started
-Since the DDPG algorithm is already provided, your main goal is to define the reward function to make the agent learn your choice of task.
+Since the DDPG algorithm is already provided, your main goal is to define the reward function to make the agent learn your choice of task. The DDPG is in the sections 3 to 8, below the notebook:
+
+![Screen Shot 2019-03-23 at 19.23.37.png](https://udacity-reviews-uploads.s3.us-west-2.amazonaws.com/_attachments/38140/1553394389/Screen_Shot_2019-03-23_at_19.23.37.png)
 
 ### Main Tips
 - Ideally the reward function should be normalized between -1 and 1 (except for colisions) in order to the NN better learn the gradients. The hyperbolic tangent function `np.tanh` can be used for this purpose.
