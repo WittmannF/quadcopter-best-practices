@@ -1,6 +1,9 @@
 
 ## (Unofficial) Udacity's How to Train a Quadcopter Best Practices
 
+### Video (in Portuguese)
+https://www.youtube.com/watch?v=NcQLy1ug95c
+
 
 ### Useful links 
 - https://knowledge.udacity.com/questions/3128
@@ -17,6 +20,11 @@ Since the DDPG algorithm is already provided, your main goal is to define the re
 ![Screen Shot 2019-03-23 at 19.23.37.png](https://udacity-reviews-uploads.s3.us-west-2.amazonaws.com/_attachments/38140/1553394389/Screen_Shot_2019-03-23_at_19.23.37.png)
 
 ### Main Tips
+- Use those two lines of code in order to reload the python packages that are being used:
+```
+%load_ext autoreload
+%autoreload 2
+```
 - Ideally the reward function should be normalized between -1 and 1 (except for colisions) in order to the NN better learn the gradients. The hyperbolic tangent function `np.tanh` can be used for this purpose.
 - Check the learning rate parameter in `Adam(lr=...)`. Lower learning rates might lead to better learning results.
 - In order to debug the agent, after training it is highly advisable to visualize it. Check the [Visualization section](https://github.com/WittmannF/quadcopter-best-practices/blob/master/README.md#visualizations). 
