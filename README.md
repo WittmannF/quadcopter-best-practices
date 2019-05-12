@@ -39,7 +39,7 @@ if self.sim.done and self.sim.runtime > self.sim.time:
 ```
 - It was reported that increasing the hyperparameter tau might help in the convergence.
 - You can choose one of 4 tasks: takeoff, hover in place, land softly, or reach a target pose. Usually the easiest task to get started is the takeoff. 
-    - For the takeoff task, set the reward to an average distance (like z=50), and give a generous reward once its position is higher than the target
+    - For the takeoff task, set the reward to a distance slightly higher than the start position(like z=20), and give a generous reward once its position is higher than the target
     - For the hovering task keep in mind that 1/rpm can make a huge difference between the agent going up or down. Try lowering the minimum and maximum speed range. 
     - For the landing taks, try to include the speed in the reward function. Ideally you should reward very low speed when the agent is close to the origin. 
     - For reaching a target pose, it is important to make the agent aknowledge when it reached the destination and finalize the episode when this happens. Please check the first answer of [this reference](https://knowledge.udacity.com/questions/3128) for more details ([mirror](https://github.com/WittmannF/quadcopter-best-practices/blob/master/knowledge_udacity_question_3128.pdf)). 
@@ -111,7 +111,7 @@ class AnimatedPlot():
             self.ax.scatter(pose[0], pose[1], pose[2], c='k', marker='s', linewidths=5)
 
         self.fig.canvas.draw()
-        plt.pause(0.5)
+        time.sleep(0.5)
     
 ```
 
